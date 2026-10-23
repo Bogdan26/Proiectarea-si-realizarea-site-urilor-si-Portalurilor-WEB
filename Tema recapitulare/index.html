@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ro">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Temă API Galerie imagini</title>
+		<link rel="stylesheet" href="./normalize.css"></link>
+		<link rel="stylesheet" href="./style.css"></link>
+		<script src="app.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<h1>Galerie imagini folosind JSONPlaceholder API</h1>
+
+			<a href="#addPhotoForm">Formular adăugare fotografie</a>
+
+			<div class="status" id="loading">Lista cu imagini se încarcă...</div>
+			<div class="status" id="error"></div>
+			<div class="status" id="empty">Lista este goală!</div>
+
+		</header>
+		<main>
+			<input id="search" type="search" placeholder="Caută fotografie după titlu...">
+			<section id="gallery"></section>
+		</main>
+
+		<footer>
+			<form method="post" id="addPhotoForm" name="addPhotoForm">
+				<label for="title">Titlul imaginii</label>
+				<input type="text" id="title" name="title">
+				<label for="url">URL-ul imaginii</label>
+				<input type="url" id="url" name="url">
+				<input type="submit" value="Adaugă">
+				<p class="error"></p>
+				<p class="success"></p>
+			</form>
+		</footer>
+	</body>
+</html>

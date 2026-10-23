@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+* {
+	transition: all 0.3s ease;
+}
+
+body {
+	background-color: #f2f2f2;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.status {
+	display: none;
+}
+
+main,
+header {
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+main {
+	padding: 0 20px;
+}
+
+main input[type='search'] {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	display: block;
+	margin-bottom: 20px;
+	outline: none;
+	padding: 10px;
+	width: 100%;
+}
+
+main input[type='search']:focus {
+	border-color: #333;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+header a[href='#addPhotoForm'] {
+	color: #333;
+	display: block;
+}
+
+header a[href='#addPhotoForm']:hover {
+	color: coral;
+}
+
+#gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+#gallery figure {
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	position: relative;
+	margin: 0;
+}
+
+#gallery figcaption {
+	display: block;
+	font-weight: 700;
+	font-size: 1rem;
+	padding: 10px;
+	text-align: center;
+}
+
+#gallery img {
+	width: 100%;
+}
+
+#gallery .delete {
+	background-color: coral;
+	border-radius: 50px;
+	border: 1px solid #333;
+	cursor: pointer;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	line-height: 25px;
+	height: 30px;
+	width: 30px;
+}
+
+#gallery .delete:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+#gallery a {
+	display: block;
+	position: relative;
+}
+
+#gallery a::before {
+	content: '\002B';
+	background-color: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	height: 100%;
+	width: 100%;
+}
+
+#gallery a:hover:before {
+	opacity: 1;
+}
+
+@media (max-width: 1024px) {
+	#gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 576px) {
+	#gallery {
+		grid-template-columns: 1fr;
+	}
+}
+
+footer {
+	background-color: #fff;
+	padding: 40px 20px;
+	margin-top: 40px;
+}
+
+#addPhotoForm {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#addPhotoForm label {
+	display: block;
+	cursor: pointer;
+	padding-bottom: 4px;
+}
+
+#addPhotoForm input[type='text'],
+#addPhotoForm input[type='url'] {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	display: block;
+	outline: none;
+	padding: 10px;
+	width: 100%;
+}
+
+#addPhotoForm input[type='text']:focus,
+#addPhotoForm input[type='url']:focus {
+	border-color: #333;
+}
+
+#addPhotoForm input[type='text'] {
+	margin-bottom: 20px;
+}
+
+#addPhotoForm input[type='submit'] {
+	background-color: lightcoral;
+	border: 1px solid #333;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px 20px;
+	margin-top: 20px;
+}
+
+#addPhotoForm input[type='submit']:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+#addPhotoForm .error {
+	display: none;
+	color: red;
+}
+
+#addPhotoForm .success {
+	display: none;
+	color: green;
+}
